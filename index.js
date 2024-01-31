@@ -1,5 +1,7 @@
 const url = '../assets/rempug.pdf';
 
+
+
 let pdfDoc = null,
   pageNum = 1,
   pageIsRendering = false,
@@ -88,3 +90,45 @@ pdfjsLib
 document.querySelector('#prev-page').addEventListener('click', showPrevPage);
 document.querySelector('#next-page').addEventListener('click', showNextPage);
 document.querySelector('#whatsapp').addEventListener('click', sendWaMessage);
+
+
+//! START of => view counters with realtime database
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCh3s7zWoG5GQr0szw8hhSqiNTgIEIx3MI",
+  authDomain: "rempugx.firebaseapp.com",
+  databaseURL: "https://rempugx-default-rtdb.firebaseio.com",
+  projectId: "rempugx",
+  storageBucket: "rempugx.appspot.com",
+  messagingSenderId: "157369730535",
+  appId: "1:157369730535:web:fb22e1f379624e819c2942",
+  measurementId: "G-EPEPRGKWBE"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const hitCounter = document.getElementById("hit-counter");
+const hitCounterContainer = document.getElementById("hit-counter-container");
+hitCounterContainer.style.display = "none";
+hitCounter.style.display = "none";
+
+const db = firebase.database().ref("totalHits");
+
+db.on("value", (snapshot) => {
+  hitCounter.textContent = snapshot.val();  
+});
+
+db.transaction(
+  (totalHits) => totalHits + 1,
+  (error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      hitCounterContainer.style.display = "flex";
+      hitCounter.style.display = "inline-block";
+    }
+  }
+);
+
+//! END of => view counters with realtime database

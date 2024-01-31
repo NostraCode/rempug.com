@@ -21,33 +21,50 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
   </head>
-
   <body>
     <main>
       <canvas id="pdf-render"></canvas>
       <footer>
         <div class="footer-content">
-          <div>
-            <button class="btn default" id="prev-page">
-              <i class="fas fa-chevron-up"></i>
-            </button>
-            <button class="btn default" id="next-page">
-              <i class="fas fa-chevron-down"></i>
+          <div class="footer-content-left">
+            <div class="arrow-container">
+              <button class="btn default" id="prev-page">
+                <i class="fas fa-chevron-up"></i>
+              </button>
+            </div>
+            <div class="page">
+              <div class="page-number">
+                <span id="page-num"></span>
+              </div>
+              <span class="dari">dari</span>
+              <div class="page-number">
+                <span id="page-count"></span>
+              </div>
+            </div>
+            <div class="arrow-container">
+              <button class="btn default" id="next-page">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div id="hit-counter-container">
+            <div id="hit-counter"></div>
+            <span>views</span>
+          </div>
+          <div class="footer-content-right">
+            <button class="btn join-with-us" id="whatsapp">
+              <div class="text-btn">
+                <span>bergabunglah</span>
+                <span>bersama kami</span>
+              </div>
+              <i class="fab fa-whatsapp"></i>
             </button>
           </div>
-          <span class="page-info">
-            <span id="page-num"></span> / <span id="page-count"></span>
-          </span>
-          <button class="btn join-with-us" id="whatsapp">
-            <div class="text-btn">
-              <span>bergabunglah</span>
-              <span>bersama kami</span>
-            </div>
-            <i class="fab fa-whatsapp"></i>
-          </button>
         </div>
       </footer>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
     <script src="index.js"></script>
   </body>

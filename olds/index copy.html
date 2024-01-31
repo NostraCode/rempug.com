@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rempug</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-rempug.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Rempug adalah manifestasi dari buah pemikiran manusia Indonesia. Mengkritisi masa lalu, menghayati masa kini, dan mengukir masa depan."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+  </head>
+  <body>
+    <main>
+      <canvas id="pdf-render"></canvas>
+      <footer>
+        <div class="footer-content">
+          <div>
+            <button class="btn default" id="prev-page">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <button class="btn default" id="next-page">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <span class="page-info">
+            <span id="page-num"></span> / <span id="page-count"></span>
+          </span>
+          <!-- <div id="hit-counter"></div> -->
+          <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+          <button class="btn join-with-us" id="whatsapp">
+            <div class="text-btn">
+              <span>bergabunglah</span>
+              <span>bersama kami</span>
+            </div>
+            <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
